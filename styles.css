@@ -314,7 +314,7 @@ footer .social-icons a:hover {
 }
 
 /* Media Queries */
-@media (max-width: 768px) {
+@media (max-width: 600px) {
   header nav ul {
     display: none; /* Hide the menu by default */
   }
@@ -328,7 +328,7 @@ footer .social-icons a:hover {
   }
 
   .cocktail-list {
-    grid-template-columns: 1fr 1fr; /* 2 items per row */
+    grid-template-columns: 1fr; /* 1 items per row */
   }
 
   .review-item {

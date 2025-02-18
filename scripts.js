@@ -4,17 +4,23 @@ document.addEventListener("DOMContentLoaded", () => {
   const cocktailItems = document.querySelectorAll(".cocktail-item");
   const modal = document.createElement("div");
   modal.classList.add("cocktail-modal");
-  modal.innerHTML = `
-        <div class="modal-content">
-            <button class="close-btn" aria-label="Close modal">&times;</button>
-            <h3></h3>
-            <img src="" alt="Cocktail Image">
-            <p class="description"></p>
-            <h4>Ingredients</h4>
-            <ul class="ingredients"></ul>
-            <h4>Preparation</h4>
-            <p class="recipe"></p>
-        </div>`;
+  cocktailModal.innerHTML = `
+    <div class="cocktail-modal-content">
+        <span class="close-btn">&times;</span>
+        <h3>${cocktailName}</h3>
+        <img src="${cocktailImage}" alt="${cocktailName}">
+        <p>${cocktailDescription}</p>
+        <h4>Ingredients</h4>
+        <ul>
+            <li>Ingredient 1</li>
+            <li>Ingredient 2</li>
+            <li>Ingredient 3</li>
+        </ul>
+        <h4>How it's Made</h4>
+        <p>Step-by-step instructions...</p>
+    </div>
+`;
+
   document.body.appendChild(modal);
   const menuIcon = document.querySelector(".menu-icon"); // Should be a <button>
   const navMenu = document.querySelector("header nav ul");
@@ -112,11 +118,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     navMenu.addEventListener("click", (e) => {
-        if (window.innerWidth < 768 && e.target.tagName === 'A') { // Check if it's a link
-            navMenu.classList.remove("active");
-            menuIcon.classList.remove("active");
-            menuIcon.setAttribute('aria-expanded', 'false'); // Update aria-expanded
-        }
-    });
-}
+    if (window.innerWidth < 768 && e.target.tagName === "A") {
+        navMenu.classList.remove("active");
+    }
 });
+
+    

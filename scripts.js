@@ -109,6 +109,26 @@ toggleSwitch.addEventListener('change', () => {
 if (localStorage.getItem('darkMode') === 'enabled') {
     body.classList.add('dark-mode');
 }
+const toggleButton = document.getElementById("dark-mode-toggle");
+const body = document.body;
+
+toggleButton.addEventListener("click", () => {
+    body.classList.toggle("dark-mode");
+
+    // Save preference to local storage
+    if (body.classList.contains("dark-mode")) {
+        localStorage.setItem("theme", "dark");
+    } else {
+        localStorage.setItem("theme", "light");
+    }
+});
+
+// Load theme from local storage on page load
+window.addEventListener("load", () => {
+    if (localStorage.getItem("theme") === "dark") {
+        body.classList.add("dark-mode");
+    }
+});
 
 // Scroll Animations (Fade-in on Scroll)
 const elements = document.querySelectorAll('.fade-in');

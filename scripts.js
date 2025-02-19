@@ -1,173 +1,113 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const navLinks = document.querySelectorAll('nav a[href^="#"]');
-  const hero = document.querySelector('.hero');
-  const cocktailItems = document.querySelectorAll(".cocktail-item");
-  const modal = document.createElement("div");
-  modal.classList.add("cocktail-modal");
-  cocktailModal.innerHTML = `
-    <div class="cocktail-modal-content">
-        <span class="close-btn">&times;</span>
-        <h3>${cocktailName}</h3>
-        <img src="${cocktailImage}" alt="${cocktailName}">
-        <p>${cocktailDescription}</p>
-        <h4>Ingredients</h4>
-        <ul>
-            <li>Ingredient 1</li>
-            <li>Ingredient 2</li>
-            <li>Ingredient 3</li>
-        </ul>
-        <h4>How it's Made</h4>
-        <p>Step-by-step instructions...</p>
-    </div>
-`;
+    const navLinks = document.querySelectorAll('nav a[href^="#"]');
+    const cocktailItems = document.querySelectorAll(".cocktail-item");
+    const modal = document.createElement("div");
+    modal.classList.add("cocktail-modal");
 
-  document.body.appendChild(modal);
-  const menuIcon = document.querySelector(".menu-icon"); // Should be a <button>
-  const navMenu = document.querySelector("header nav ul");
+    document.body.appendChild(modal);
+    
+    // Mobile Navigation
+    const menuIcon = document.querySelector(".menu-icon"); 
+    const navMenu = document.querySelector("header nav ul");
 
-
-  // Smooth Scrolling (Improved)
-  navLinks.forEach(anchor => {
-    anchor.addEventListener("click", function (e) {
-      e.preventDefault();
-      const targetId = this.getAttribute("href");
-      const targetElement = document.querySelector(targetId);
-
-      if (targetElement) {
-        targetElement.scrollIntoView({
-          behavior: "smooth",
-          block: "start"
+    if (menuIcon && navMenu) {
+        menuIcon.addEventListener("click", () => {
+            const isExpanded = menuIcon.getAttribute('aria-expanded') === 'true';
+            menuIcon.setAttribute('aria-expanded', !isExpanded);
+            navMenu.classList.toggle("active");
+            menuIcon.classList.toggle("active");
         });
-      }
+
+        navMenu.addEventListener("click", (e) => {
+            if (window.innerWidth < 768 && e.target.tagName === "A") {
+                navMenu.classList.remove("active");
+            }
+        });
+    }
+
+    // Smooth Scrolling
+    navLinks.forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            const targetElement = document.querySelector(this.getAttribute("href"));
+            if (targetElement) {
+                targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
+            }
+        });
     });
-  });
 
-  // Set the background image of the hero section (if needed dynamically)
-  // hero.style.backgroundImage = "url('images/img7.jpg')";  // Or set in CSS
+    // Cocktail Modal
+    cocktailItems.forEach(item => {
+        item.addEventListener("click", () => {
+            const name = item.querySelector("h3").textContent;
+            const description = item.querySelector("p").textContent;
+            const image = item.querySelector("img").src;
+            const ingredients = item.dataset.ingredients ? item.dataset.ingredients.split(",") : [];
+            const recipe = item.dataset.recipe || "";
 
-  // Cocktail Modal (Improved)
-  cocktailItems.forEach(item => {
-    item.addEventListener("click", () => {
-      const name = item.querySelector("h3").textContent;
-      const description = item.querySelector("p").textContent;
-      const image = item.querySelector("img").src;
-      const ingredients = item.dataset.ingredients ? item.dataset.ingredients.split(",") : []; // Handle missing data
-      const recipe = item.dataset.recipe || ""; // Handle missing data
+            modal.innerHTML = `
+                <div class="cocktail-modal-content">
+                    <span class="close-btn">&times;</span>
+                    <h3>${name}</h3>
+                    <img src="${image}" alt="${name}">
+                    <p class="description">${description}</p>
+                    <h4>Ingredients</h4>
+                    <ul class="ingredients">
+                        ${ingredients.map(ing => `<li>${ing.trim()}</li>`).join('')}
+                    </ul>
+                    <h4>How it's Made</h4>
+                    <p class="recipe">${recipe}</p>
+                </div>
+            `;
 
-      modal.querySelector("h3").textContent = name;
-      modal.querySelector(".description").textContent = description;
-      modal.querySelector("img").src = image;
+            modal.classList.add("show");
 
-      const ingredientsList = modal.querySelector(".ingredients");
-      ingredientsList.innerHTML = "";
-      ingredients.forEach(ingredient => {
-        const li = document.createElement("li");
-        li.textContent = ingredient.trim(); // Trim whitespace
-        ingredientsList.appendChild(li);
-      });
+            const closeButton = modal.querySelector('.close-btn');
+            closeButton.focus();
 
-      modal.querySelector(".recipe").textContent = recipe;
-      modal.classList.add("show");
-
-      // Focus on close button when modal opens
-      const closeButton = modal.querySelector('.close-btn');
-      if (closeButton) {
-        closeButton.focus();
-      }
+            closeButton.addEventListener("click", () => modal.classList.remove("show"));
+        });
     });
-  });
 
-  // Modal Close Functionality
-    const closeButton = modal.querySelector('.close-btn');
-    if (closeButton) {
-        closeButton.addEventListener("click", () => {
+    // Modal Close Event Listeners
+    modal.addEventListener("click", (e) => {
+        if (e.target === modal) {
             modal.classList.remove("show");
-        });
-    }
+        }
+    });
 
-  modal.addEventListener("click", (e) => {
-    if (e.target === modal) {
-      modal.classList.remove("show");
-    }
-  });
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && modal.classList.contains("show")) {
+            modal.classList.remove("show");
+        }
+    });
 
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && modal.classList.contains("show")) {
-      modal.classList.remove("show");
-    }
-  });
-// Dark Mode Toggle
-const toggleSwitch = document.getElementById('darkModeToggle');
-const body = document.body;
+    // Dark Mode Toggle (Fixed)
+    const toggleButton = document.getElementById("dark-mode-toggle");
+    const body = document.body;
 
-toggleSwitch.addEventListener('change', () => {
-    body.classList.toggle('dark-mode');
-    localStorage.setItem('darkMode', body.classList.contains('dark-mode') ? 'enabled' : 'disabled');
-});
+    toggleButton.addEventListener("click", () => {
+        body.classList.toggle("dark-mode");
 
-// Preserve Dark Mode on Page Load
-if (localStorage.getItem('darkMode') === 'enabled') {
-    body.classList.add('dark-mode');
-}
-const toggleButton = document.getElementById("dark-mode-toggle");
-const body = document.body;
+        localStorage.setItem("theme", body.classList.contains("dark-mode") ? "dark" : "light");
+    });
 
-toggleButton.addEventListener("click", () => {
-    body.classList.toggle("dark-mode");
-
-    // Save preference to local storage
-    if (body.classList.contains("dark-mode")) {
-        localStorage.setItem("theme", "dark");
-    } else {
-        localStorage.setItem("theme", "light");
-    }
-});
-
-// Load theme from local storage on page load
-window.addEventListener("load", () => {
+    // Load Dark Mode Preference
     if (localStorage.getItem("theme") === "dark") {
         body.classList.add("dark-mode");
     }
-});
 
-// Scroll Animations (Fade-in on Scroll)
-const elements = document.querySelectorAll('.fade-in');
+    // Scroll Animations
+    const elements = document.querySelectorAll('.fade-in');
 
-const fadeInOnScroll = () => {
-    elements.forEach(el => {
-        if (el.getBoundingClientRect().top < window.innerHeight - 100) {
-            el.classList.add('visible');
-        }
-    });
-};
-
-window.addEventListener('scroll', fadeInOnScroll);
-window.addEventListener('load', fadeInOnScroll);
-
-
-  // Mobile Navigation (Improved)
-  if (menuIcon && navMenu) { // Check if elements exist
-    menuIcon.addEventListener("click", () => {
-        const isExpanded = menuIcon.getAttribute('aria-expanded') === 'true';
-        menuIcon.setAttribute('aria-expanded', !isExpanded);
-        navMenu.classList.toggle("active"); // Toggle the menu visibility
-        menuIcon.classList.toggle("active"); // Toggle a class on the icon (e.g., for styling)
-
-        if (!isExpanded) {
-            // Focus the first link in the menu
-            const firstLink = navMenu.querySelector('a');
-            if (firstLink) {
-                firstLink.focus();
+    const fadeInOnScroll = () => {
+        elements.forEach(el => {
+            if (el.getBoundingClientRect().top < window.innerHeight - 100) {
+                el.classList.add('visible');
             }
-        } else {
-            menuIcon.focus(); // Return focus to the menu icon
-        }
-    });
+        });
+    };
 
-    navMenu.addEventListener("click", (e) => {
-    if (window.innerWidth < 768 && e.target.tagName === "A") {
-        navMenu.classList.remove("active");
-    }
+    window.addEventListener('scroll', fadeInOnScroll);
+    window.addEventListener('load', fadeInOnScroll);
 });
-
-    

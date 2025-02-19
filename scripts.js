@@ -62,13 +62,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
             modal.classList.add("show");
 
-            // Close button logic 
             const closeButton = modal.querySelector('.close-btn');
             closeButton.focus();
-            
-            closeButton.addEventListener("click", () => {
-                modal.classList.remove("show");
-            }, { once: true });  
+
+            closeButton.addEventListener("click", () => modal.classList.remove("show"));
         });
     });
 
@@ -85,27 +82,26 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // Dark Mode Toggle
+    document.addEventListener("DOMContentLoaded", function () {
     const darkModeToggle = document.getElementById("darkModeToggle");
     const body = document.body;
 
-    if (darkModeToggle) {
-        // Check localStorage to persist user preference
-        if (localStorage.getItem("darkMode") === "enabled") {
-            body.classList.add("dark-mode");
-            darkModeToggle.checked = true;
-        }
-
-        darkModeToggle.addEventListener("change", function () {
-            if (this.checked) {
-                body.classList.add("dark-mode");
-                localStorage.setItem("darkMode", "enabled");
-            } else {
-                body.classList.remove("dark-mode");
-                localStorage.setItem("darkMode", "disabled");
-            }
-        });
+    // Check localStorage to persist user preference
+    if (localStorage.getItem("darkMode") === "enabled") {
+        body.classList.add("dark-mode");
+        darkModeToggle.checked = true;
     }
+
+    darkModeToggle.addEventListener("change", function () {
+        if (this.checked) {
+            body.classList.add("dark-mode");
+            localStorage.setItem("darkMode", "enabled");
+        } else {
+            body.classList.remove("dark-mode");
+            localStorage.setItem("darkMode", "disabled");
+        }
+    });
+});
 
     // Scroll Animations
     const elements = document.querySelectorAll('.fade-in');

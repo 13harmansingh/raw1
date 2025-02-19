@@ -85,7 +85,7 @@ header nav ul.active li {
 
 /* Hero Section */
 .hero {
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba (0, 0, 0, 0.2)) url('img7.jpg') center/cover no-repeat;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)), url('img7.jpg') center/cover no-repeat;
   height: 100vh;
   color: white;
   display: flex;
@@ -373,6 +373,7 @@ body.dark-mode .btn:hover {
     cursor: pointer;
     font-weight: bold;
     transition: all 0.3s ease-in-out;
+    z-index: 9999;
 }
 
 .dark-mode-toggle:hover {

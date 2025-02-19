@@ -379,6 +379,39 @@ body.dark-mode .btn:hover {
 .dark-mode-toggle:hover {
     background: #eee;
 }
+/* Default light mode (no class applied) */
+body {
+    background: #ffffff;
+    color: #333;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+    background: #121212;
+    color: #f1f1f1;
+}
+
+body.dark-mode .hero {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4)),
+                url('your-image.jpg') center/cover no-repeat;
+}
+
+body.dark-mode a {
+    color: #ffcc00; /* Change link color */
+}
+
+body.dark-mode .card {
+    background: #1e1e1e;
+    color: white;
+    border: 1px solid #444;
+}
+
+body.dark-mode .dark-mode-toggle {
+    background: #333;
+    color: #fff;
+    border: 2px solid #555;
+}
 
 /* Scroll Animations */
 .fade-in {

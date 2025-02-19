@@ -96,6 +96,33 @@ document.addEventListener("DOMContentLoaded", () => {
       modal.classList.remove("show");
     }
   });
+// Dark Mode Toggle
+const toggleSwitch = document.getElementById('darkModeToggle');
+const body = document.body;
+
+toggleSwitch.addEventListener('change', () => {
+    body.classList.toggle('dark-mode');
+    localStorage.setItem('darkMode', body.classList.contains('dark-mode') ? 'enabled' : 'disabled');
+});
+
+// Preserve Dark Mode on Page Load
+if (localStorage.getItem('darkMode') === 'enabled') {
+    body.classList.add('dark-mode');
+}
+
+// Scroll Animations (Fade-in on Scroll)
+const elements = document.querySelectorAll('.fade-in');
+
+const fadeInOnScroll = () => {
+    elements.forEach(el => {
+        if (el.getBoundingClientRect().top < window.innerHeight - 100) {
+            el.classList.add('visible');
+        }
+    });
+};
+
+window.addEventListener('scroll', fadeInOnScroll);
+window.addEventListener('load', fadeInOnScroll);
 
 
   // Mobile Navigation (Improved)

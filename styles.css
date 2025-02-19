@@ -10,9 +10,9 @@ html {
 
 /* Body and Fonts */
 body {
-  font-family: 'Roboto', sans-serif;
-  background-color: #fff;
-  color: #333;
+  font-family: 'Playfair Display', serif;
+  background-color: #fafafa;
+  color: #1a1a1a;
   line-height: 1.8;
   padding: 0;
   margin: 0;
@@ -85,7 +85,7 @@ header nav ul.active li {
 
 /* Hero Section */
 .hero {
-  background: rgba(0, 0, 0, 0.4) url('img7.jpg') center/cover no-repeat;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba (0, 0, 0, 0.2)) url('img7.jpg') center/cover no-repeat;
   height: 100vh;
   color: white;
   display: flex;
@@ -93,7 +93,7 @@ header nav ul.active li {
   align-items: center;
   position: relative;
   text-align: center;
-  padding: 0 20px;
+  padding: 120px 20px;
 }
 
 .hero::after {
@@ -114,29 +114,38 @@ header nav ul.active li {
 }
 
 .hero-text h1 {
-  font-size: 4rem;
+  font-size: 48px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transfrom: uppercase;
+  text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.3);
+  animation: fadeInUp 1s ease-in-out;
   margin-bottom: 20px;
   font-weight: 700;
 }
 
 .hero-text p {
-  font-size: 1.5rem;
-  margin-bottom: 30px;
+  font-size: 18px;
+  max-width: 600px;
+  animation: fadeInUp 1.3s ease-in-out;
+  margin: 15px auto;
 }
 
 .cta-button {
-  padding: 15px 40px;
-  background-color: #ff6f61;
+  padding: 14px 28px;
+  background-color: #e63946;
   color: white;
-  font-size: 1.2rem;
+  font-size: 18px;
   font-weight: 600;
-  border-radius: 5px;
-  transition: all 0.3s ease;
+  border-radius: 30px;
+  transition: all 0.3s ease-in-out;
+  text-transform: uppercase;
 }
 
 .cta-button:hover {
-  background-color: #e65749;
-  transform: translateY(-5px);
+  background-color: #ff5c72;
+  box-shadow: 0px 10px 20px rgba(230, 57, 70, 0.4);
+  transform: translateY(-3px);
 }
 
 /* About Us Section */
@@ -225,9 +234,9 @@ header nav ul.active li {
 
 /* Reviews Section */
 .reviews {
-  padding: 80px 40px;
+  padding: 60px 20px;
   text-align: center;
-  background-color: #fff;
+  background-color: #f9f9f9;
 }
 
 .reviews h2 {
@@ -292,10 +301,10 @@ iframe {
 
 /* Footer */
 footer {
-  background-color: #333;
+  background-color: #1a1a1a;
   color: white;
   text-align: center;
-  padding: 40px 0;
+  padding: 40px 20px;
 }
 
 footer .social-icons {
@@ -311,6 +320,75 @@ footer .social-icons a {
 
 footer .social-icons a:hover {
   color: #ff6f61;
+}
+/*Animations */
+@keyframes fadeInUp {
+   from { 
+    opacity: 0;
+    transform: translateY(20px);
+    }
+    to { 
+    opacity: 1;
+    transform: translateY(0);
+    }
+}
+/* Dark Mode Styling */
+body.dark-mode {
+    background: #121212;
+    color: #f0f0f0;
+}
+
+body.dark-mode .hero {
+    background: linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.5)), 
+                url('your-darkmode-image.jpg') center/cover no-repeat;
+}
+
+body.dark-mode .card {
+    background: #222;
+    color: #f0f0f0;
+    box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .footer {
+    background: #0d0d0d;
+}
+
+body.dark-mode .btn {
+    background: #ff5c72;
+}
+
+body.dark-mode .btn:hover {
+    background: #e63946;
+}
+
+/* Dark Mode Toggle */
+.dark-mode-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: white;
+    border: 2px solid #ccc;
+    padding: 8px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+}
+
+.dark-mode-toggle:hover {
+    background: #eee;
+}
+
+/* Scroll Animations */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s ease-in-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* Media Queries */

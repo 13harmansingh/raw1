@@ -62,13 +62,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
             modal.classList.add("show");
 
-            // Close button logic (prevents multiple event listeners)
+            // Close button logic 
             const closeButton = modal.querySelector('.close-btn');
             closeButton.focus();
             
             closeButton.addEventListener("click", () => {
                 modal.classList.remove("show");
-            }, { once: true });  // Ensures only one event listener is added
+            }, { once: true });  
         });
     });
 

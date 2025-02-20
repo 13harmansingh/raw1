@@ -261,7 +261,7 @@ header nav ul.active li {
 
 .cta-button {
   padding: 14px 28px;
-  background-color: ##ffffff;
+  background-color: #ffffff;
   color: white;
   font-size: 18px;
   font-weight: 600;
@@ -543,7 +543,7 @@ footer .social-icons a:hover {
 
 .cocktail-modal .close-btn:hover {
   color: #ff6f61;
-}// Smooth Scrolling
+} Smooth Scrolling
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
       e.preventDefault();
@@ -551,6 +551,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       document.querySelector(this.getAttribute('href')).scrollIntoView({
           behavior: 'smooth',
           block: 'start'
-      });
-  });
-});
+      };
+  }
+}

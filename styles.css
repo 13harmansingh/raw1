@@ -24,8 +24,13 @@ body.dark-mode {
 }
 /* Ensure all sections adapt to dark mode */
 body.dark-mode .hero {
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5)),
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2)),
               url('your-darkmode-image.jpg') center/cover no-repeat !important;
+}
+body.dark-mode .hero {
+  background-image: url('img7-dark.jpg') !important;
+  background-size: cover !important;
+  background-position: center !important;
 }
 
 body.dark-mode .about,

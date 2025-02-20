@@ -63,7 +63,7 @@ body.dark-mode footer {
 
 
 body.dark-mode .cta-button {
-  background-color: #ff5c72 !important;
+  background-color: #ffa500 !important;
   color: #121212 !important;
 }
 
@@ -134,7 +134,7 @@ body.dark-mode .social-icons a:hover {
 }
 
 .dark-mode-toggle:hover {
-  background: #e6b800;
+  background: #ffa500;
 }
 
 
@@ -263,7 +263,7 @@ header nav ul.active li {
 
 .cta-button {
   padding: 14px 28px;
-  background-color: #e63946;
+  background-color: #ffa500;
   color: white;
   font-size: 18px;
   font-weight: 600;

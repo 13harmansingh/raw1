@@ -85,7 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // Dark Mode Toggle
+    // Dark Mode Toggle (Fixed for Button)
     const darkModeToggle = document.getElementById("darkModeToggle");
     const body = document.body;
 
@@ -93,15 +93,15 @@ document.addEventListener("DOMContentLoaded", () => {
         // Check localStorage to persist user preference
         if (localStorage.getItem("darkMode") === "enabled") {
             body.classList.add("dark-mode");
-            darkModeToggle.checked = true;
         }
 
-        darkModeToggle.addEventListener("change", function () {
-            if (this.checked) {
-                body.classList.add("dark-mode");
+        darkModeToggle.addEventListener("click", () => {
+            body.classList.toggle("dark-mode");
+
+            // Save user preference
+            if (body.classList.contains("dark-mode")) {
                 localStorage.setItem("darkMode", "enabled");
             } else {
-                body.classList.remove("dark-mode");
                 localStorage.setItem("darkMode", "disabled");
             }
         });

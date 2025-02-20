@@ -22,14 +22,27 @@ body.dark-mode {
   background: #121212 !important;
   color: #f1f1f1 !important;
 }
-
+/* Ensure all sections adapt to dark mode */
 body.dark-mode .hero {
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4)),
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5)),
               url('your-darkmode-image.jpg') center/cover no-repeat !important;
 }
 
+body.dark-mode .about,
+body.dark-mode .cocktails,
+body.dark-mode .reviews,
+body.dark-mode .location,
+body.dark-mode footer {
+  background-color: #121212 !important;
+  color: #f1f1f1 !important;
+}
+
+
 body.dark-mode a {
   color: #ffcc00 !important;
+}
+body.dark-mode a:hover {
+  color: #ff9900 !important;
 }
 
 body.dark-mode .card {
@@ -40,7 +53,9 @@ body.dark-mode .card {
 
 body.dark-mode footer {
   background-color: #0d0d0d !important;
+  color: #f1f1f1 !important;
 }
+
 
 body.dark-mode .cta-button {
   background-color: #ff5c72 !important;
@@ -71,6 +86,31 @@ body.dark-mode .cocktail-modal-content {
   color: #f1f1f1 !important;
   border: 1px solid #444 !important;
 }
+body.dark-mode .cocktail-modal {
+  background: rgba(0, 0, 0, 0.9) !important;
+}
+
+body.dark-mode .cocktail-modal .close-btn {
+  color: #ffcc00 !important;
+}
+
+body.dark-mode .cocktail-modal .close-btn:hover {
+  color: #ff9900 !important;
+}
+
+body.dark-mode input::placeholder,
+body.dark-mode textarea::placeholder {
+  color: #bbb !important;
+}
+/* Social Icons */
+body.dark-mode .social-icons a {
+  color: #ffcc00 !important;
+}
+
+body.dark-mode .social-icons a:hover {
+  color: #ff9900 !important;
+}
+
 
 /* Dark Mode Toggle Button */
 .dark-mode-toggle {

@@ -261,7 +261,7 @@ header nav ul.active li {
 
 .cta-button {
   padding: 14px 28px;
-  background-color: #ffffff;
+  background-color: #121212;
   color: white;
   font-size: 18px;
   font-weight: 600;
@@ -271,7 +271,7 @@ header nav ul.active li {
 }
 
 .cta-button:hover {
-  background-color: #ffffff;
+  background-color: #121212;
   box-shadow: 0px 10px 20px rgba(230, 57, 70, 0.4);
   transform: translateY(-3px);
 }

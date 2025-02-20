@@ -63,7 +63,7 @@ body.dark-mode footer {
 
 
 body.dark-mode .cta-button {
-  background-color: #ffa500 !important;
+  background-color: #ffffff !important;
   color: #121212 !important;
 }
 
@@ -263,7 +263,7 @@ header nav ul.active li {
 
 .cta-button {
   padding: 14px 28px;
-  background-color: #ffa500;
+  background-color: ##ffffff;
   color: white;
   font-size: 18px;
   font-weight: 600;

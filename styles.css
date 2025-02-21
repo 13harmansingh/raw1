@@ -66,7 +66,7 @@ body.dark-mode .cta-button {
 }
 
 body.dark-mode .cta-button:hover {
-  background-color: #121212 !important;
+  background-color: #ffffff !important;
 }
 body.dark-mode header {
   background-color: #0d0d0d !important;
@@ -261,7 +261,7 @@ header nav ul.active li {
 
 .cta-button {
   padding: 14px 28px;
-  background-color: #121212;
+  background-color: ##ffffff;
   color: white;
   font-size: 18px;
   font-weight: 600;
@@ -271,7 +271,7 @@ header nav ul.active li {
 }
 
 .cta-button:hover {
-  background-color: #121212;
+  background-color: #ffffff;
   box-shadow: 0px 10px 20px rgba(230, 57, 70, 0.4);
   transform: translateY(-3px);
 }
@@ -447,7 +447,7 @@ footer .social-icons a {
 }
 
 footer .social-icons a:hover {
-  color: #ff6f61;
+  color: #ffffff;
 }
 /*Animations */
 @keyframes fadeInUp {
@@ -543,4 +543,14 @@ footer .social-icons a:hover {
 
 .cocktail-modal .close-btn:hover {
   color: #ff6f61;
-}
+}// Smooth Scrolling
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+
+      document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+      });
+  });
+});

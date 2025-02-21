@@ -9,11 +9,14 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <button id="darkModeToggle" class="dark-mode-toggle">Dark Mode</button>
-
+     <!-- Dark Mode Toggle Button -->
+    <button id="darkModeToggle" class="dark-mode-toggle"> Dark Mode</button>
+    
+    <!-- Header -->
     <header>
         <div class="logo"><a href="#">Rooftop Raw</a></div>
-        <div class="menu-icon">☰</div> <nav>
+        <div class="menu-icon">☰</div> <!-- Hamburger icon -->
+        <nav>
             <ul>
                 <li><a href="#">Home</a></li>
                 <li><a href="#menu">Menu</a></li>
@@ -24,94 +27,97 @@
         </nav>
     </header>
 
-    <main>
-        <section class="hero">
-            <div class="hero-text">
-                <h1>Experience Lisbon’s Best Rooftop Bar</h1>
-                <p>Enjoy breathtaking views, crafted cocktails, and an unforgettable atmosphere.</p>
-                <a href="#menu" class="cta-button">Explore Our Menu</a>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Experience Lisbon’s Best Rooftop Bar</h1>
+            <p>Enjoy breathtaking views, crafted cocktails, and an unforgettable atmosphere.</p>
+            <a href="#menu" class="cta-button">Explore Our Menu</a>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section class="about animate-on-scroll">
+        <h2>About Rooftop Raw</h2>
+        <p>Located in the heart of Lisbon, Rooftop Raw offers a blend of classic and contemporary, with stunning panoramic views and an atmosphere designed for unforgettable nights. Join us for expertly crafted drinks, great vibes, and breathtaking sunsets.</p>
+    </section>
+
+    <!-- Signature Cocktails Section -->
+    <section id="menu" class="cocktails">
+        <h2>Signature Cocktails</h2>
+        <div class="cocktail-list">
+            <div class="cocktail-item" data-cocktail="1">
+                <img src="img1.jpg" alt="Cocktail 1">
+                <h3>The Sunset Squeeze</h3>
+                <p>Fresh citrus blend, premium spirits, and a twist of basil</p>
             </div>
-        </section>
-
-        <section class="about animate-on-scroll">
-            <h2>About Rooftop Raw</h2>
-            <p>Located in the heart of Lisbon, Rooftop Raw offers a blend of classic and contemporary, with stunning panoramic views and an atmosphere designed for unforgettable nights. Join us for expertly crafted drinks, great vibes, and breathtaking sunsets.</p>
-        </section>
-
-        <section id="menu" class="cocktails">
-            <h2>Signature Cocktails</h2>
-            <div class="cocktail-list">
-                <div class="cocktail-item animate-on-scroll" data-ingredients="Vodka, Lime Juice, Simple Syrup, Basil" data-recipe="Shake all ingredients with ice and strain. Garnish with basil." data-cocktail="1">
-                    <img src="img1.jpg" alt="The Sunset Squeeze cocktail, a refreshing citrus drink.">
-                    <h3>The Sunset Squeeze</h3>
-                    <p>Fresh citrus blend, premium spirits, and a twist of basil</p>
-                </div>
-                <div class="cocktail-item animate-on-scroll" data-ingredients="Rum, Mint, Lime, Sugar, Soda, Passion Fruit" data-recipe="Muddle mint, lime, and sugar. Add rum, passion fruit, and fill with soda." data-cocktail="2">
-                    <img src="img2.jpg" alt="The Rooftop Raw cocktail, with rum, mint, lime, and passion fruit." >
-                    <h3>The Rooftop Raw</h3>
-                    <p>Rum, mint, lime, and a hint of passion fruit</p>
-                </div>
-                <div class="cocktail-item animate-on-scroll" data-ingredients="Gin, Cucumber, Elderflower, Herbs" data-recipe="Combine all ingredients in a shaker with ice. Shake well and strain." data-cocktail="3">
-                    <img src="img3.jpg" alt="The Lisbon Breeze cocktail, with gin, cucumber, elderflower, and herbs." >
-                    <h3>The Lisbon Breeze</h3>
-                    <p>Gin, cucumber, elderflower, and fresh herbs</p>
-                </div>
-                <div class="cocktail-item animate-on-scroll" data-ingredients="Rum, Mint, Lime, Sugar, Passion Fruit" data-recipe="Muddle mint, lime, and sugar. Add rum and passion fruit. Fill with crushed ice and garnish with mint." data-cocktail="4">
-                    <img src="img4.jpg" alt="The Passionfruit Mojito cocktail, a mojito with a passion fruit twist." >
-                    <h3>Passionfruit Mojito</h3>
-                    <p>Mojito with a sweet twist of passion fruit</p>
-                </div>
-                <div class="cocktail-item animate-on-scroll" data-ingredients="Gin, Vermouth, Lemon Twist" data-recipe="Stir gin and vermouth with ice. Strain into a chilled martini glass and garnish with a lemon twist." data-cocktail="5">
-                    <img src="img5.jpg" alt="The Classic Martini cocktail, with gin, vermouth, and a lemon twist.">
-                    <h3>Classic Martini</h3>
-                    <p>Gin, vermouth, and a twist of lemon</p>
-                </div>
-                <div class="cocktail-item animate-on-scroll" data-ingredients="Rum, Strawberries, Lime Juice, Sugar" data-recipe="Blend all ingredients with ice until smooth. Serve in a chilled glass." data-cocktail="6">
-                    <img src="img6.jpg" alt="The Strawberry Daiquiri cocktail, with fresh strawberries, rum, and lime juice.">
-                    <h3>Strawberry Daiquiri</h3>
-                    <p>Fresh strawberries, rum, and lime juice</p>
-                </div>
+            <div class="cocktail-item" data-cocktail="2">
+                <img src="img2.jpg" alt="Cocktail 2">
+                <h3>The Rooftop Raw</h3>
+                <p>Rum, mint, lime, and a hint of passion fruit</p>
             </div>
-            <button class="close-btn" aria-label="Close modal">×</button>
-
-
-        </section>
-
-        <section id="reviews" class="reviews">
-            <h2>What Our Guests Say</h2>
-            <div class="reviews-list">
-                <div class="review-item">
-                    <p>"The perfect place to unwind. The views are stunning, and the cocktails are some of the best I've ever had!"</p>
-                    <h4>Maria S.</h4>
-                </div>
-                <div class="review-item">
-                    <p>"Incredible atmosphere, friendly staff, and delicious drinks. A must-visit when you're in Lisbon!"</p>
-                    <h4>John D.</h4>
-                </div>
-                <div class="review-item">
-                    <p>"The Sunset Squeeze is a game-changer! A fantastic spot for cocktails and great vibes!"</p>
-                    <h4>Emily W.</h4>
-                </div>
+            <div class="cocktail-item" data-cocktail="3">
+                <img src="img3.jpg" alt="Cocktail 3">
+                <h3>The Lisbon Breeze</h3>
+                <p>Gin, cucumber, elderflower, and fresh herbs</p>
             </div>
-        </section>
-
-        <section id="location" class="location">
-            <h2>Visit Us</h2>
-            <p>We are located at the heart of Lisbon, offering the best panoramic views. Join us for a drink with a view!</p>
-            <div class="map">
-                <a href="YOUR_ACTUAL_GOOGLE_MAPS_LINK" target="_blank" class="cta-button">Find Us on Google Maps</a>
-                <iframe src="YOUR_ACTUAL_GOOGLE_MAPS_EMBED_CODE" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            <div class="cocktail-item" data-cocktail="4">
+                <img src="img4.jpg" alt="Cocktail 4">
+                <h3>Passionfruit Mojito</h3>
+                <p>Mojito with a sweet twist of passion fruit</p>
             </div>
-        </section>
+            <div class="cocktail-item" data-cocktail="5">
+                <img src="img5.jpg" alt="Cocktail 5">
+                <h3>Classic Martini</h3>
+                <p>Gin, vermouth, and a twist of lemon</p>
+            </div>
+            <div class="cocktail-item" data-cocktail="6">
+                <img src="img6.jpg" alt="Cocktail 6">
+                <h3>Strawberry Daiquiri</h3>
+                <p>Fresh strawberries, rum, and lime juice</p>
+            </div>
+        </div>
+        <button class="close-btn" aria-label="Close modal">&times;</button>
 
-    </main>
+    </section>
 
+    <!-- Reviews Section -->
+    <section id="reviews" class="reviews">
+        <h2>What Our Guests Say</h2>
+        <div class="reviews-list">
+            <div class="review-item">
+                <p>"The perfect place to unwind. The views are stunning, and the cocktails are some of the best I've ever had!"</p>
+                <h4>Maria S.</h4>
+            </div>
+            <div class="review-item">
+                <p>"Incredible atmosphere, friendly staff, and delicious drinks. A must-visit when you're in Lisbon!"</p>
+                <h4>John D.</h4>
+            </div>
+            <div class="review-item">
+                <p>"The Sunset Squeeze is a game-changer! A fantastic spot for cocktails and great vibes!"</p>
+                <h4>Emily W.</h4>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section id="location" class="location">
+        <h2>Visit Us</h2>
+        <p>We are located at the heart of Lisbon, offering the best panoramic views. Join us for a drink with a view!</p>
+        <div class="map">
+            <a href="https://www.google.com/maps?q=Rooftop+Raw+Bar+Lisbon" target="_blank" class="cta-button">Find Us on Google Maps</a>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d226136.92602450394!2d-9.21082328780849!3d38.71671660992891!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd1ab45fe10013a1%3A0x92aada9b9da98ca0!2sLisbon%2C%20Portugal!5e0!3m2!1sen!2sus!4v1614623518755!5m2!1sen!2sus" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer>
-        <p>© 2025 Rooftop Raw Bar. All Rights Reserved.</p>
+        <p>&copy; 2025 Rooftop Raw Bar. All Rights Reserved.</p>
         <div class="social-icons">
-            <a href="#" aria-label="Instagram">Instagram</a>
-            <a href="#" aria-label="Facebook">Facebook</a>
-            <a href="#" aria-label="Twitter">Twitter</a>
+            <a href="#">Instagram</a>
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
         </div>
     </footer>
 

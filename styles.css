@@ -25,8 +25,7 @@ body.dark-mode {
 /* Ensure all sections adapt to dark mode */
 
 body.dark-mode .hero {
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2)),
-              url('img7-dark.jpg') center/cover no-repeat !important;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2)), url('img7-dark.jpg') center/cover no-repeat !important;
   background-size: cover !important;
   background-position: center !important;
 }
@@ -213,7 +212,7 @@ header nav ul.active li {
 
 /* Hero Section */
 .hero {
-  background: url('img7.jpg') center/cover no-repeat;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)), url('img7.jpg') center/cover no-repeat;
   height: 100vh;
   color: white;
   display: flex;

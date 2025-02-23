@@ -137,7 +137,7 @@ body.dark-mode .social-icons a:hover {
 
 /* Body and Fonts */
 body {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Roboto', sans-serif;
   background-color: #fafafa;
   color: #1a1a1a;
   line-height: 1.8;
@@ -260,7 +260,7 @@ header nav ul.active li {
 
 .cta-button {
   padding: 14px 28px;
-  background-color: ##ffffff;
+  background-color: #ffffff;
   color: white;
   font-size: 18px;
   font-weight: 600;
@@ -270,7 +270,7 @@ header nav ul.active li {
 }
 
 .cta-button:hover {
-  background-color: #ffffff;
+  background-color: #000000;
   box-shadow: 0px 10px 20px rgba(230, 57, 70, 0.4);
   transform: translateY(-3px);
 }
@@ -542,14 +542,4 @@ footer .social-icons a:hover {
 
 .cocktail-modal .close-btn:hover {
   color: #ff6f61;
-}// Smooth Scrolling
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-      e.preventDefault();
-
-      document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
-      });
-  });
-});
+}

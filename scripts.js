@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", () => {
     const navLinks = document.querySelectorAll('nav a[href^="#"]');
     const cocktailItems = document.querySelectorAll(".cocktail-item");
@@ -122,52 +121,3 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener('scroll', fadeInOnScroll);
     window.addEventListener('load', fadeInOnScroll);
 });
-document.addEventListener("DOMContentLoaded", function () {
-  const elements = document.querySelectorAll(".fade-in");
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
-      }
-    });
-  });
-
-  elements.forEach(el => observer.observe(el));
-});
-document.addEventListener("DOMContentLoaded", () => {
-    const navLinks = document.querySelectorAll('nav a[href^="#"]');
-    const cocktailItems = document.querySelectorAll(".cocktail-item");
-    const modal = document.createElement("div");
-    modal.classList.add("cocktail-modal");
-
-    document.body.appendChild(modal);
-    
-    // Mobile Navigation
-    const menuIcon = document.querySelector(".menu-icon"); 
-    const navMenu = document.querySelector("header nav ul");
-
-    if (menuIcon && navMenu) {
-        menuIcon.addEventListener("click", () => {
-            const isExpanded = menuIcon.getAttribute('aria-expanded') === 'true';
-            menuIcon.setAttribute('aria-expanded', !isExpanded);
-            navMenu.classList.toggle("active");
-            menuIcon.classList.toggle("active");
-        });
-
-        navMenu.addEventListener("click", (e) => {
-            if (window.innerWidth < 768 && e.target.tagName === "A") {
-                navMenu.classList.remove("active");
-            }
-        });
-    }
-
-    // Smooth Scrolling
-    navLinks.forEach(anchor => {
-        anchor.addEventListener("click", function (e) {
-            e.preventDefault();
-            const targetElement = document.querySelector(this.getAttribute("href"));
-            if (targetElement) {
-                targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
-            }
-        });
-    });

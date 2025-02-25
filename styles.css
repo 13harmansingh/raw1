@@ -25,7 +25,7 @@ opacity: 1;
 /* Dark Mode Styling */
 body.dark-mode {
   background: linear-gradient(135deg, #121212, #1e1e1e) !important;
-  color: #f1f1f1 !important;
+  color: #e0e0e0 !important;
 }
 /* Ensure all sections adapt to dark mode */
 
@@ -529,7 +529,7 @@ footer .social-icons a:hover {
 }
 
 .cocktail-modal.show {
-  visibility: visible;
+  transition: opacity 0.3s ease-in-out;
   opacity: 1;
 }
 

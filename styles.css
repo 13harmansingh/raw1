@@ -19,7 +19,7 @@ body {
 
 /* Dark Mode Styling */
 body.dark-mode {
-  background: linear gradient(135deg, #121212, #1e1e1e) !important;
+  background: #000000 !important;
   color: #f1f1f1 !important;
 }
 /* Ensure all sections adapt to dark mode */
